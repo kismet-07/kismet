@@ -64,14 +64,15 @@ Job choices are permanent. A character cannot switch to a different branch after
 | Level 25 | Blade Master | Proposed first-job choice; confirmed name |
 | Level 50 under Blade Master | Executioner | Proposed second-job choice; confirmed name |
 | Level 50 under Blade Master | Rogue | Proposed second-job choice; confirmed name |
-| Level 50 under Guardian | Two branches | Not named or designed yet |
+| Level 50 under Guardian | Paladin | Confirmed second-job name; defensive protector direction |
+| Level 50 under Guardian | Templar | Confirmed second-job name; offensive defender / counterattack direction |
 | Level 75 | Two final choices under each second job | Not named or designed yet |
 
 The earlier flat Swordsman specialization concept (Guardian, Blade Master, Executioner) is superseded by this branching structure. Executioner is currently a second-job branch under Blade Master, not a direct first-job choice.
 
 #### Current job identity concepts
 
-- **Guardian:** Defensive frontline / tank. The current primary-status recommendation is VIT.
+- **Guardian:** Defensive frontline / tank. The current primary-status recommendation is VIT. Its two confirmed second-job branches are **Paladin** (defensive protector) and **Templar** (offensive defender focused on counterattacks).
 - **Blade Master:** Dual-sword melee combat concept; fast attacks, chained combos, and parries.
 - **Executioner:** Greatsword combat concept; heavy attacks, defense-breaking, and powerful finishers.
 - **Rogue:** Offensive melee concept emphasizing attack and attack speed. Its detailed weapon configuration and mechanics are not finalized.
