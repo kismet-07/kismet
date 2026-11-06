@@ -68,7 +68,9 @@ Job choices are permanent. A character cannot switch to a different branch after
 | Level 50 under Guardian | Templar | Confirmed second-job name; offensive defender / counterattack direction |
 | Level 75 under Executioner | Berserker | Confirmed third-job name; aggressive greatsword specialist |
 | Level 75 under Executioner | Doombringer | Confirmed third-job name; deliberate high-impact greatsword specialist focused on armor destruction and finishing attacks |
-| Level 75 under Paladin, Templar, and Rogue | Two final choices per second job | Not named or designed yet |
+| Level 75 under Rogue | Assassin | Confirmed third-job name; ambush and critical-strike specialist focused on lethal single-target attacks |
+| Level 75 under Rogue | Shadowblade | Confirmed third-job name; mobile melee specialist focused on rapid attacks, evasion, and combos |
+| Level 75 under Paladin and Templar | Two final choices per second job | Not named or designed yet |
 
 The earlier flat Swordsman specialization concept (Guardian, Blade Master, Executioner) is superseded by this branching structure. Executioner is currently a second-job branch under Blade Master, not a direct first-job choice.
 
@@ -77,7 +79,7 @@ The earlier flat Swordsman specialization concept (Guardian, Blade Master, Execu
 - **Guardian:** Defensive frontline / tank. The current primary-status recommendation is VIT. Its two confirmed second-job branches are **Paladin** (defensive protector) and **Templar** (offensive defender focused on counterattacks).
 - **Blade Master:** Dual-sword melee combat concept; fast attacks, chained combos, and parries.
 - **Executioner:** Aggressive greatsword specialist focused on high-damage attacks, armor penetration, devastating combos, and finishing strikes. Its confirmed level-75 branch **Berserker** develops this aggressive identity further; its other confirmed level-75 branch is **Doombringer**, a deliberate, high-impact greatsword specialist focused on armor destruction and finishing attacks.
-- **Rogue:** Offensive melee concept emphasizing attack and attack speed. Its detailed weapon configuration and mechanics are not finalized.
+- **Rogue:** Offensive melee concept emphasizing attack and attack speed. Its two confirmed level-75 branches are **Assassin** (ambushes, critical strikes, and lethal single-target attacks) and **Shadowblade** (mobility, rapid attacks, evasion, and combos). Detailed weapon configuration and mechanics remain to be finalized.
 
 All remaining branches, skills, attributes, and balance values are still under discussion.
 
