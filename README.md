@@ -157,6 +157,21 @@ The base class and advanced jobs use different skill systems:
 
 The number of passive skills is not fixed. A job may have two, three, or another suitable number of passive options in its tree. The tree should offer meaningful choices rather than require every player to use the same build.
 
+### Swordsman Base-Class Skills
+
+The Swordsman base class (Levels 1-24) has exactly **four fixed skills**, and all four are active. The base class uses a **single sword**. These skills are available before the Level 25 first-job advancement.
+
+| Skill | Type | Confirmed design |
+|---|---|---|
+| **Gale Strike** | Active · Offensive | A powerful sword strike. It uses the same animation as the basic attack. |
+| **Wind Cutter** | Active · Offensive | The Swordsman points the sword toward the selected enemy. A whirlwind forms at the sword and travels toward that enemy. It is single-target and stops when it hits the selected enemy. |
+| **Blade Rush** | Active · Offensive | The Swordsman draws an X-shaped motion with the sword and launches an X-shaped blade projectile. It travels in a straight line, hits the first enemy along its path, and stops on impact. |
+| **Guard** | Active · Defensive | Creates a visible energy shield around the Swordsman for **4 seconds**. The character can move and attack while the shield is active. |
+
+**Player-controlled skill combos:** The player assigns the four skills independently to their preferred skill slots and decides which order to use them in. There is no mandatory combo sequence or automatic combo chain. Skill animations should support smooth transitions when players chain different skills.
+
+The skill names and core behaviors above are confirmed. Damage values, damage reduction, cooldowns, offensive skill durations where applicable, resource costs, exact visual effects, and other numerical balance values remain undecided and must not be invented during implementation.
+
 The exact skill lists, prerequisites, upgrade caps, respec rules, and whether job advancement preserves access to base-class skills remain to be finalized.
 
 ## Godhood
@@ -220,7 +235,7 @@ No rebirth behavior should be implemented until these rules are agreed upon.
 - [x] Established fixed base-class skills and a seven-learned-skill job skill tree.
 - [x] Established the Godhood deity-trial concept and eight-hour failed-trial cooldown.
 - [x] Confirm all Swordsman job names and branching paths.
-- [ ] Design and balance Swordsman base-class and job skills.
+- [x] Define the four active Swordsman base-class skills and their core behaviors.\n- [ ] Design and balance advanced Swordsman job skills and finalize skill numerical values.
 - [ ] Finalize attribute formulas and derived combat statistics.
 - [ ] Define Godhood deities, divine effects, and numerical balance.
 - [ ] Design the remaining four basic classes and their job paths.
