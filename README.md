@@ -72,13 +72,14 @@ Job choices are permanent. A character cannot switch to a different branch after
 | Level 75 under Rogue | Shadowblade | Confirmed third-job name; mobile melee specialist focused on rapid attacks, evasion, and combos |
 | Level 75 under Paladin | Crusader | Confirmed third-job name; holy protector focused on divine buffs, healing, and shielding |
 | Level 75 under Paladin | Sentinel | Confirmed third-job name; defensive specialist focused on damage absorption, enemy control, and frontline protection |
-| Level 75 under Templar | Two final choices | Not named or designed yet |
+| Level 75 under Templar | Warden | Confirmed third-job name; counterattack specialist who punishes enemies for attacking or breaking through defenses |
+| Level 75 under Templar | Vanguard | Confirmed third-job name; aggressive frontline warrior focused on charges, disruption, and offensive protection |
 
 The earlier flat Swordsman specialization concept (Guardian, Blade Master, Executioner) is superseded by this branching structure. Executioner is currently a second-job branch under Blade Master, not a direct first-job choice.
 
 #### Current job identity concepts
 
-- **Guardian:** Defensive frontline / tank. The current primary-status recommendation is VIT. Its two confirmed second-job branches are **Paladin** (defensive protector) and **Templar** (offensive defender focused on counterattacks). Paladin's confirmed level-75 branches are **Crusader** (holy protection, divine buffs, healing, and shielding) and **Sentinel** (damage absorption, enemy control, and frontline protection).
+- **Guardian:** Defensive frontline / tank. The current primary-status recommendation is VIT. Its two confirmed second-job branches are **Paladin** (defensive protector) and **Templar** (offensive defender focused on counterattacks). Paladin's confirmed level-75 branches are **Crusader** (holy protection, divine buffs, healing, and shielding) and **Sentinel** (damage absorption, enemy control, and frontline protection). Templar's confirmed level-75 branches are **Warden** (counterattacks and punishing enemies that attack or break through defenses) and **Vanguard** (aggressive frontline charges, disruption, and offensive protection).
 - **Blade Master:** Dual-sword melee combat concept; fast attacks, chained combos, and parries.
 - **Executioner:** Aggressive greatsword specialist focused on high-damage attacks, armor penetration, devastating combos, and finishing strikes. Its confirmed level-75 branch **Berserker** develops this aggressive identity further; its other confirmed level-75 branch is **Doombringer**, a deliberate, high-impact greatsword specialist focused on armor destruction and finishing attacks.
 - **Rogue:** Offensive melee concept emphasizing attack and attack speed. Its two confirmed level-75 branches are **Assassin** (ambushes, critical strikes, and lethal single-target attacks) and **Shadowblade** (mobility, rapid attacks, evasion, and combos). Detailed weapon configuration and mechanics remain to be finalized.
