@@ -67,7 +67,6 @@ Job choices are permanent. A character cannot switch to a different branch after
 | Level 50 under Guardian | Paladin | Confirmed second-job name; defensive protector direction |
 | Level 50 under Guardian | Templar | Confirmed second-job name; offensive defender / counterattack direction |
 | Level 75 under Executioner | Berserker | Confirmed third-job name; aggressive greatsword specialist |
-| Level 75 under Executioner | Berserker | Confirmed third-job name; aggressive greatsword specialist |
 | Level 75 under Executioner | Doombringer | Confirmed third-job name; deliberate high-impact greatsword specialist focused on armor destruction and finishing attacks |
 | Level 75 under Paladin, Templar, and Rogue | Two final choices per second job | Not named or designed yet |
 
