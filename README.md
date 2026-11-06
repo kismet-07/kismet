@@ -56,6 +56,38 @@ Swordsman is the first class being designed in detail. Its job structure is a br
 
 Job choices are permanent. A character cannot switch to a different branch after making an advancement choice.
 
+#### Swordsman job tree
+
+The following Mermaid diagram is the canonical Swordsman progression. It is kept in the README so the branch relationships remain visible and unambiguous.
+
+```mermaid
+flowchart TB
+    S["Swordsman<br/>Base Class · Level 1"]
+
+    S --> G["Guardian<br/>Level 25"]
+    S --> BM["Blade Master<br/>Level 25"]
+
+    G --> P["Paladin<br/>Level 50"]
+    G --> T["Templar<br/>Level 50"]
+    BM --> E["Executioner<br/>Level 50"]
+    BM --> R["Rogue<br/>Level 50"]
+
+    P --> C["Crusader<br/>Level 75"]
+    P --> SE["Sentinel<br/>Level 75"]
+    T --> W["Warden<br/>Level 75"]
+    T --> V["Vanguard<br/>Level 75"]
+    E --> BE["Berserker<br/>Level 75"]
+    E --> D["Doombringer<br/>Level 75"]
+    R --> A["Assassin<br/>Level 75"]
+    R --> SB["Shadowblade<br/>Level 75"]
+
+    GH["Godhood Quest<br/>Level 99 · Separate from jobs"]
+    S -. "At Level 99" .-> GH
+```
+
+**Branch rules:** Choose one first job at Level 25, one connected second job at Level 50, and one connected final job at Level 75. Each choice is permanent. Godhood unlocks at Level 99 and is not a job or another branch in the job tree.
+
+
 #### Swordsman job names currently discussed
 
 | Advancement | Job | Status |
@@ -187,7 +219,7 @@ No rebirth behavior should be implemented until these rules are agreed upon.
 - [x] Established the initial six primary attributes and Status Guide approach.
 - [x] Established fixed base-class skills and a seven-learned-skill job skill tree.
 - [x] Established the Godhood deity-trial concept and eight-hour failed-trial cooldown.
-- [ ] Finalize every Swordsman job branch and name.
+- [x] Confirm all Swordsman job names and branching paths.
 - [ ] Design and balance Swordsman base-class and job skills.
 - [ ] Finalize attribute formulas and derived combat statistics.
 - [ ] Define Godhood deities, divine effects, and numerical balance.
