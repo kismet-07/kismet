@@ -38,6 +38,18 @@ import walkDownAtlas5Json from "../../../assets/characters/swordsman/base/walk/d
 import walkDownAtlas5Texture from "../../../assets/characters/swordsman/base/walk/down/walk_down_5.png?url";
 import walkDownAtlas6Json from "../../../assets/characters/swordsman/base/walk/down/walk_down_6.json?raw";
 import walkDownAtlas6Texture from "../../../assets/characters/swordsman/base/walk/down/walk_down_6.png?url";
+import walkUpAtlas1Json from "../../../assets/characters/swordsman/base/walk/up/walk_up_01.json?raw";
+import walkUpAtlas1Texture from "../../../assets/characters/swordsman/base/walk/up/walk_up_01.png?url";
+import walkUpAtlas2Json from "../../../assets/characters/swordsman/base/walk/up/walk_up_02.json?raw";
+import walkUpAtlas2Texture from "../../../assets/characters/swordsman/base/walk/up/walk_up_02.png?url";
+import walkUpAtlas3Json from "../../../assets/characters/swordsman/base/walk/up/walk_up_03.json?raw";
+import walkUpAtlas3Texture from "../../../assets/characters/swordsman/base/walk/up/walk_up_03.png?url";
+import walkUpAtlas4Json from "../../../assets/characters/swordsman/base/walk/up/walk_up_04.json?raw";
+import walkUpAtlas4Texture from "../../../assets/characters/swordsman/base/walk/up/walk_up_04.png?url";
+import walkUpAtlas5Json from "../../../assets/characters/swordsman/base/walk/up/walk_up_05.json?raw";
+import walkUpAtlas5Texture from "../../../assets/characters/swordsman/base/walk/up/walk_up_05.png?url";
+import walkUpAtlas6Json from "../../../assets/characters/swordsman/base/walk/up/walk_up_06.json?raw";
+import walkUpAtlas6Texture from "../../../assets/characters/swordsman/base/walk/up/walk_up_06.png?url";
 
 type AsepriteAtlasData = {
   frames: Record<string, unknown>;
@@ -164,13 +176,50 @@ const walkDownAtlases: {
   },
 ];
 
+const walkUpAtlases: {
+  key: string;
+  textureUrl: string;
+  data: AsepriteAtlasData;
+}[] = [
+  {
+    key: "swordsman-walk-up-01",
+    textureUrl: walkUpAtlas1Texture,
+    data: JSON.parse(walkUpAtlas1Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-walk-up-02",
+    textureUrl: walkUpAtlas2Texture,
+    data: JSON.parse(walkUpAtlas2Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-walk-up-03",
+    textureUrl: walkUpAtlas3Texture,
+    data: JSON.parse(walkUpAtlas3Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-walk-up-04",
+    textureUrl: walkUpAtlas4Texture,
+    data: JSON.parse(walkUpAtlas4Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-walk-up-05",
+    textureUrl: walkUpAtlas5Texture,
+    data: JSON.parse(walkUpAtlas5Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-walk-up-06",
+    textureUrl: walkUpAtlas6Texture,
+    data: JSON.parse(walkUpAtlas6Json) as AsepriteAtlasData,
+  },
+];
+
 class BootScene extends Phaser.Scene {
   constructor() {
     super("BootScene");
   }
 
   preload() {
-    for (const atlas of [...idleDownAtlases, ...idleUpAtlases, ...idleLeftAtlases, ...idleRightAtlases, ...walkDownAtlases]) {
+    for (const atlas of [...idleDownAtlases, ...idleUpAtlases, ...idleLeftAtlases, ...idleRightAtlases, ...walkDownAtlases, ...walkUpAtlases]) {
       this.load.atlas(atlas.key, atlas.textureUrl, atlas.data);
     }
   }
@@ -197,6 +246,7 @@ class BootScene extends Phaser.Scene {
     const idleLeftFrames = collectFrames(idleLeftAtlases);
     const idleRightFrames = collectFrames(idleRightAtlases);
     const walkDownFrames = collectFrames(walkDownAtlases);
+    const walkUpFrames = collectFrames(walkUpAtlases);
 
     if (idleDownFrames.length !== 50) {
       throw new Error(
@@ -225,6 +275,12 @@ class BootScene extends Phaser.Scene {
     if (walkDownFrames.length !== 89) {
       throw new Error(
         `Expected 89 Swordsman walk-down frames, received ${walkDownFrames.length}.`,
+      );
+    }
+
+    if (walkUpFrames.length !== 78) {
+      throw new Error(
+        `Expected 78 Swordsman walk-up frames, received ${walkUpFrames.length}.`,
       );
     }
 
@@ -269,6 +325,13 @@ class BootScene extends Phaser.Scene {
       repeat: -1,
     });
 
+    this.anims.create({
+      key: "swordsman-walk-up",
+      frames: walkUpFrames,
+      frameRate: 25,
+      repeat: -1,
+    });
+
     this.add
       .text(width / 2, 24, "RAN: REBIRTH", {
         fontFamily: "Arial",
@@ -279,7 +342,7 @@ class BootScene extends Phaser.Scene {
       .setOrigin(0.5, 0);
 
     const instructionText = this.add
-      .text(width / 2, 62, "W / A / D: Change facing | Hold S: Walk Down | Current: Right", {
+      .text(width / 2, 62, "Hold W: Walk Up | A / D: Change facing | Hold S: Walk Down | Current: Right", {
         fontFamily: "Arial",
         fontSize: "14px",
         color: "#9ca3af",
@@ -325,13 +388,20 @@ class BootScene extends Phaser.Scene {
       );
     };
 
-    keyboard.on("keydown-W", () => playIdleDirection("up"));
+    keyboard.on("keydown-W", () => {
+      swordsman.play("swordsman-walk-up");
+      instructionText.setText("Hold W: Walk Up | A / D: Change facing | Hold S: Walk Down | Current: WALK UP | 78 frames | 25 FPS");
+    });
+
+    keyboard.on("keyup-W", () => {
+      playIdleDirection("up");
+    });
     keyboard.on("keydown-A", () => playIdleDirection("left"));
     keyboard.on("keydown-D", () => playIdleDirection("right"));
 
     keyboard.on("keydown-S", () => {
       swordsman.play("swordsman-walk-down");
-      instructionText.setText("W / A / D: Change facing | Hold S: Walk Down | Current: WALK DOWN | 89 frames | 25 FPS");
+      instructionText.setText("Hold W: Walk Up | A / D: Change facing | Hold S: Walk Down | Current: WALK DOWN | 89 frames | 25 FPS");
     });
 
     keyboard.on("keyup-S", () => {
