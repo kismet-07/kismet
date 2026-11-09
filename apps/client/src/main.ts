@@ -9,6 +9,13 @@ import idleDownAtlas3Texture from "../../../assets/characters/swordsman/base/Idl
 import idleDownAtlas4Json from "../../../assets/characters/swordsman/base/Idle/down/swordsman_idle_down4.json?raw";
 import idleDownAtlas4Texture from "../../../assets/characters/swordsman/base/Idle/down/swordsman_idle_down4.png?url";
 
+import idleUpAtlas1Json from "../../../assets/characters/swordsman/base/Idle/up/Idle_up1.json?raw";
+import idleUpAtlas1Texture from "../../../assets/characters/swordsman/base/Idle/up/Idle_up1.png?url";
+import idleUpAtlas2Json from "../../../assets/characters/swordsman/base/Idle/up/Idle_up2.json?raw";
+import idleUpAtlas2Texture from "../../../assets/characters/swordsman/base/Idle/up/Idle_up2.png?url";
+import idleUpAtlas3Json from "../../../assets/characters/swordsman/base/Idle/up/Idle_up3.json?raw";
+import idleUpAtlas3Texture from "../../../assets/characters/swordsman/base/Idle/up/Idle_up3.png?url";
+
 type AsepriteAtlasData = {
   frames: Record<string, unknown>;
 };
@@ -40,13 +47,35 @@ const idleDownAtlases: {
   },
 ];
 
+const idleUpAtlases: {
+  key: string;
+  textureUrl: string;
+  data: AsepriteAtlasData;
+}[] = [
+  {
+    key: "swordsman-idle-up-01",
+    textureUrl: idleUpAtlas1Texture,
+    data: JSON.parse(idleUpAtlas1Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-idle-up-02",
+    textureUrl: idleUpAtlas2Texture,
+    data: JSON.parse(idleUpAtlas2Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-idle-up-03",
+    textureUrl: idleUpAtlas3Texture,
+    data: JSON.parse(idleUpAtlas3Json) as AsepriteAtlasData,
+  },
+];
+
 class BootScene extends Phaser.Scene {
   constructor() {
     super("BootScene");
   }
 
   preload() {
-    for (const atlas of idleDownAtlases) {
+    for (const atlas of [...idleDownAtlases, ...idleUpAtlases]) {
       this.load.atlas(atlas.key, atlas.textureUrl, atlas.data);
     }
   }
@@ -54,32 +83,51 @@ class BootScene extends Phaser.Scene {
   create() {
     const { width, height } = this.scale;
 
-    const animationFrames: { key: string; frame: string }[] = [];
+    const collectFrames = (
+      atlases: typeof idleDownAtlases,
+    ): { key: string; frame: string }[] => {
+      const frames: { key: string; frame: string }[] = [];
 
-    for (const atlas of idleDownAtlases) {
-      for (const frameName of Object.keys(atlas.data.frames)) {
-        animationFrames.push({
-          key: atlas.key,
-          frame: frameName,
-        });
+      for (const atlas of atlases) {
+        for (const frameName of Object.keys(atlas.data.frames)) {
+          frames.push({ key: atlas.key, frame: frameName });
+        }
       }
-    }
 
-    if (animationFrames.length !== 50) {
+      return frames;
+    };
+
+    const idleDownFrames = collectFrames(idleDownAtlases);
+    const idleUpFrames = collectFrames(idleUpAtlases);
+
+    if (idleDownFrames.length !== 50) {
       throw new Error(
-        `Expected 50 Swordsman idle-down frames, received ${animationFrames.length}.`,
+        `Expected 50 Swordsman idle-down frames, received ${idleDownFrames.length}.`,
       );
     }
 
-    const firstFrame = animationFrames[0];
+    if (idleUpFrames.length !== 33) {
+      throw new Error(
+        `Expected 33 Swordsman idle-up frames, received ${idleUpFrames.length}.`,
+      );
+    }
+
+    const firstFrame = idleUpFrames[0];
 
     if (!firstFrame) {
-      throw new Error("Swordsman idle-down animation has no frames.");
+      throw new Error("Swordsman idle-up animation has no frames.");
     }
 
     this.anims.create({
       key: "swordsman-idle-down",
-      frames: animationFrames,
+      frames: idleDownFrames,
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "swordsman-idle-up",
+      frames: idleUpFrames,
       frameRate: 10,
       repeat: -1,
     });
@@ -94,7 +142,7 @@ class BootScene extends Phaser.Scene {
       .setOrigin(0.5, 0);
 
     this.add
-      .text(width / 2, 62, "Swordsman | Idle Down | 50 frames | 10 FPS", {
+      .text(width / 2, 62, "Swordsman | Idle Up | 33 frames | 10 FPS", {
         fontFamily: "Arial",
         fontSize: "14px",
         color: "#9ca3af",
@@ -109,7 +157,7 @@ class BootScene extends Phaser.Scene {
     );
 
     swordsman.setScale(0.2);
-    swordsman.play("swordsman-idle-down");
+    swordsman.play("swordsman-idle-up");
   }
 }
 
