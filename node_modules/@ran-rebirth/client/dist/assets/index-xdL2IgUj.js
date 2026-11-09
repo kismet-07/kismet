@@ -5042,5 +5042,861 @@ texCoord = mod(texCoord, 1.0) * outFrame.zw + outFrame.xy;`},disable:!!e}}},8378
     "slices": [],\r
     "image": "idle_right2.png"\r
   }\r
-}`,be=`/assets/idle_right2-ClwhfhcD.png`,xe=[{key:`swordsman-idle-down-01`,textureUrl:Z,data:JSON.parse(ne)},{key:`swordsman-idle-down-02`,textureUrl:$,data:JSON.parse(Q)},{key:`swordsman-idle-down-03`,textureUrl:ie,data:JSON.parse(re)},{key:`swordsman-idle-down-04`,textureUrl:oe,data:JSON.parse(ae)}],Se=[{key:`swordsman-idle-up-01`,textureUrl:ce,data:JSON.parse(se)},{key:`swordsman-idle-up-02`,textureUrl:ue,data:JSON.parse(le)},{key:`swordsman-idle-up-03`,textureUrl:fe,data:JSON.parse(de)}],Ce=[{key:`swordsman-idle-left-01`,textureUrl:me,data:JSON.parse(pe)},{key:`swordsman-idle-left-02`,textureUrl:ge,data:JSON.parse(he)}],we=[{key:`swordsman-idle-right-01`,textureUrl:ve,data:JSON.parse(_e)},{key:`swordsman-idle-right-02`,textureUrl:be,data:JSON.parse(ye)}],Te=class extends X.Scene{constructor(){super(`BootScene`)}preload(){for(let e of[...xe,...Se,...Ce,...we])this.load.atlas(e.key,e.textureUrl,e.data)}create(){let{width:e,height:t}=this.scale,n=e=>{let t=[];for(let n of e)for(let e of Object.keys(n.data.frames))t.push({key:n.key,frame:e});return t},r=n(xe),i=n(Se),a=n(Ce),o=n(we);if(r.length!==50)throw Error(`Expected 50 Swordsman idle-down frames, received ${r.length}.`);if(i.length!==33)throw Error(`Expected 33 Swordsman idle-up frames, received ${i.length}.`);if(a.length!==22)throw Error(`Expected 22 Swordsman idle-left frames, received ${a.length}.`);if(o.length!==22)throw Error(`Expected 22 Swordsman idle-right frames, received ${o.length}.`);let s=o[0];if(!s)throw Error(`Swordsman idle-right animation has no frames.`);this.anims.create({key:`swordsman-idle-down`,frames:r,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-up`,frames:i,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-left`,frames:a,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-right`,frames:o,frameRate:10,repeat:-1}),this.add.text(e/2,24,`RAN: REBIRTH`,{fontFamily:`Arial`,fontSize:`28px`,color:`#ffffff`,fontStyle:`bold`}).setOrigin(.5,0);let c=this.add.text(e/2,62,`W / A / S / D: Change facing direction | Current: Right`,{fontFamily:`Arial`,fontSize:`14px`,color:`#9ca3af`}).setOrigin(.5,0),l=this.add.sprite(e/2,t/2,s.key,s.frame);l.setScale(.2),l.play(`swordsman-idle-right`);let u=this.input.keyboard;if(!u)throw Error(`Keyboard input is unavailable.`);u.addKey(X.Input.Keyboard.KeyCodes.W,!0),u.addKey(X.Input.Keyboard.KeyCodes.A,!0),u.addKey(X.Input.Keyboard.KeyCodes.S,!0),u.addKey(X.Input.Keyboard.KeyCodes.D,!0);let d=e=>{l.play(`swordsman-idle-${e}`),c.setText(`W / A / S / D: Change facing direction | Current: ${e.toUpperCase()} | ${{up:33,left:22,down:50,right:22}[e]} frames`)};u.on(`keydown-W`,()=>d(`up`)),u.on(`keydown-A`,()=>d(`left`)),u.on(`keydown-S`,()=>d(`down`)),u.on(`keydown-D`,()=>d(`right`))}},Ee={type:X.AUTO,parent:`game`,backgroundColor:`#111827`,scale:{mode:X.Scale.RESIZE,autoCenter:X.Scale.CENTER_BOTH,width:1280,height:720},scene:[Te]};new X.Game(Ee);
-//# sourceMappingURL=index-CsvCmJfV.js.map
+}`,be=`/assets/idle_right2-ClwhfhcD.png`,xe=`{ "frames": {\r
+   "swordsman_walk_down #walk_down_01 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 1.ase": {\r
+    "frame": { "x": 940, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 2.ase": {\r
+    "frame": { "x": 1880, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 3.ase": {\r
+    "frame": { "x": 2820, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 4.ase": {\r
+    "frame": { "x": 3760, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 5.ase": {\r
+    "frame": { "x": 4700, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 6.ase": {\r
+    "frame": { "x": 5640, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 7.ase": {\r
+    "frame": { "x": 6580, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 8.ase": {\r
+    "frame": { "x": 7520, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 9.ase": {\r
+    "frame": { "x": 8460, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 10.ase": {\r
+    "frame": { "x": 9400, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 11.ase": {\r
+    "frame": { "x": 10340, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 12.ase": {\r
+    "frame": { "x": 11280, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 13.ase": {\r
+    "frame": { "x": 12220, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_01 14.ase": {\r
+    "frame": { "x": 13160, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "walk_down_1.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 14100, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "walk_down_01", "from": 0, "to": 14, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_02", "from": 15, "to": 29, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_03", "from": 30, "to": 44, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_04", "from": 45, "to": 59, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_05", "from": 60, "to": 74, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_06", "from": 75, "to": 88, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`,Se=`/assets/walk_down_1-DEYoH2Nz.png`,Ce=`{ "frames": {\r
+   "swordsman_walk_down #walk_down_02 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 1.ase": {\r
+    "frame": { "x": 940, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 2.ase": {\r
+    "frame": { "x": 1880, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 3.ase": {\r
+    "frame": { "x": 2820, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 4.ase": {\r
+    "frame": { "x": 3760, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 5.ase": {\r
+    "frame": { "x": 4700, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 6.ase": {\r
+    "frame": { "x": 5640, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 7.ase": {\r
+    "frame": { "x": 6580, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 8.ase": {\r
+    "frame": { "x": 7520, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 9.ase": {\r
+    "frame": { "x": 8460, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 10.ase": {\r
+    "frame": { "x": 9400, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 11.ase": {\r
+    "frame": { "x": 10340, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 12.ase": {\r
+    "frame": { "x": 11280, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 13.ase": {\r
+    "frame": { "x": 12220, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_02 14.ase": {\r
+    "frame": { "x": 13160, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "walk_down_2.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 14100, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "walk_down_01", "from": 0, "to": 14, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_02", "from": 15, "to": 29, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_03", "from": 30, "to": 44, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_04", "from": 45, "to": 59, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_05", "from": 60, "to": 74, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_06", "from": 75, "to": 88, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`,we=`/assets/walk_down_2-jfxri7pW.png`,Te=`{ "frames": {\r
+   "swordsman_walk_down #walk_down_03 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 1.ase": {\r
+    "frame": { "x": 940, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 2.ase": {\r
+    "frame": { "x": 1880, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 3.ase": {\r
+    "frame": { "x": 2820, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 4.ase": {\r
+    "frame": { "x": 3760, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 5.ase": {\r
+    "frame": { "x": 4700, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 6.ase": {\r
+    "frame": { "x": 5640, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 7.ase": {\r
+    "frame": { "x": 6580, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 8.ase": {\r
+    "frame": { "x": 7520, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 9.ase": {\r
+    "frame": { "x": 8460, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 10.ase": {\r
+    "frame": { "x": 9400, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 11.ase": {\r
+    "frame": { "x": 10340, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 12.ase": {\r
+    "frame": { "x": 11280, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 13.ase": {\r
+    "frame": { "x": 12220, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_03 14.ase": {\r
+    "frame": { "x": 13160, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "walk_down_3.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 14100, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "walk_down_01", "from": 0, "to": 14, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_02", "from": 15, "to": 29, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_03", "from": 30, "to": 44, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_04", "from": 45, "to": 59, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_05", "from": 60, "to": 74, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_06", "from": 75, "to": 88, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`,Ee=`/assets/walk_down_3-DbVLI58V.png`,De=`{ "frames": {\r
+   "swordsman_walk_down #walk_down_04 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 1.ase": {\r
+    "frame": { "x": 940, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 2.ase": {\r
+    "frame": { "x": 1880, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 3.ase": {\r
+    "frame": { "x": 2820, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 4.ase": {\r
+    "frame": { "x": 3760, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 5.ase": {\r
+    "frame": { "x": 4700, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 6.ase": {\r
+    "frame": { "x": 5640, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 7.ase": {\r
+    "frame": { "x": 6580, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 8.ase": {\r
+    "frame": { "x": 7520, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 9.ase": {\r
+    "frame": { "x": 8460, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 10.ase": {\r
+    "frame": { "x": 9400, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 11.ase": {\r
+    "frame": { "x": 10340, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 12.ase": {\r
+    "frame": { "x": 11280, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 13.ase": {\r
+    "frame": { "x": 12220, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_04 14.ase": {\r
+    "frame": { "x": 13160, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "walk_down_4.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 14100, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "walk_down_01", "from": 0, "to": 14, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_02", "from": 15, "to": 29, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_03", "from": 30, "to": 44, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_04", "from": 45, "to": 59, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_05", "from": 60, "to": 74, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_06", "from": 75, "to": 88, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`,Oe=`/assets/walk_down_4-hHQo_eiw.png`,ke=`{ "frames": {\r
+   "swordsman_walk_down #walk_down_05 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 1.ase": {\r
+    "frame": { "x": 940, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 2.ase": {\r
+    "frame": { "x": 1880, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 3.ase": {\r
+    "frame": { "x": 2820, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 4.ase": {\r
+    "frame": { "x": 3760, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 5.ase": {\r
+    "frame": { "x": 4700, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 6.ase": {\r
+    "frame": { "x": 5640, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 7.ase": {\r
+    "frame": { "x": 6580, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 8.ase": {\r
+    "frame": { "x": 7520, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 9.ase": {\r
+    "frame": { "x": 8460, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 10.ase": {\r
+    "frame": { "x": 9400, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 11.ase": {\r
+    "frame": { "x": 10340, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 12.ase": {\r
+    "frame": { "x": 11280, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 13.ase": {\r
+    "frame": { "x": 12220, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_05 14.ase": {\r
+    "frame": { "x": 13160, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "walk_down_5.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 14100, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "walk_down_01", "from": 0, "to": 14, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_02", "from": 15, "to": 29, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_03", "from": 30, "to": 44, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_04", "from": 45, "to": 59, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_05", "from": 60, "to": 74, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_06", "from": 75, "to": 88, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`,Ae=`/assets/walk_down_5-CwL4GLkV.png`,je=`{ "frames": {\r
+   "swordsman_walk_down #walk_down_06 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 1.ase": {\r
+    "frame": { "x": 940, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 2.ase": {\r
+    "frame": { "x": 1880, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 3.ase": {\r
+    "frame": { "x": 2820, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 4.ase": {\r
+    "frame": { "x": 3760, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 5.ase": {\r
+    "frame": { "x": 4700, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 6.ase": {\r
+    "frame": { "x": 5640, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 7.ase": {\r
+    "frame": { "x": 6580, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 8.ase": {\r
+    "frame": { "x": 7520, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 9.ase": {\r
+    "frame": { "x": 8460, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 10.ase": {\r
+    "frame": { "x": 9400, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 11.ase": {\r
+    "frame": { "x": 10340, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 12.ase": {\r
+    "frame": { "x": 11280, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_walk_down #walk_down_06 13.ase": {\r
+    "frame": { "x": 12220, "y": 0, "w": 940, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 940, "h": 1080 },\r
+    "sourceSize": { "w": 940, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "walk_down_6.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 13160, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "walk_down_01", "from": 0, "to": 14, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_02", "from": 15, "to": 29, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_03", "from": 30, "to": 44, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_04", "from": 45, "to": 59, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_05", "from": 60, "to": 74, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "walk_down_06", "from": 75, "to": 88, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`,Me=`/assets/walk_down_6-BmQJUmOa.png`,Ne=[{key:`swordsman-idle-down-01`,textureUrl:Z,data:JSON.parse(ne)},{key:`swordsman-idle-down-02`,textureUrl:$,data:JSON.parse(Q)},{key:`swordsman-idle-down-03`,textureUrl:ie,data:JSON.parse(re)},{key:`swordsman-idle-down-04`,textureUrl:oe,data:JSON.parse(ae)}],Pe=[{key:`swordsman-idle-up-01`,textureUrl:ce,data:JSON.parse(se)},{key:`swordsman-idle-up-02`,textureUrl:ue,data:JSON.parse(le)},{key:`swordsman-idle-up-03`,textureUrl:fe,data:JSON.parse(de)}],Fe=[{key:`swordsman-idle-left-01`,textureUrl:me,data:JSON.parse(pe)},{key:`swordsman-idle-left-02`,textureUrl:ge,data:JSON.parse(he)}],Ie=[{key:`swordsman-idle-right-01`,textureUrl:ve,data:JSON.parse(_e)},{key:`swordsman-idle-right-02`,textureUrl:be,data:JSON.parse(ye)}],Le=[{key:`swordsman-walk-down-01`,textureUrl:Se,data:JSON.parse(xe)},{key:`swordsman-walk-down-02`,textureUrl:we,data:JSON.parse(Ce)},{key:`swordsman-walk-down-03`,textureUrl:Ee,data:JSON.parse(Te)},{key:`swordsman-walk-down-04`,textureUrl:Oe,data:JSON.parse(De)},{key:`swordsman-walk-down-05`,textureUrl:Ae,data:JSON.parse(ke)},{key:`swordsman-walk-down-06`,textureUrl:Me,data:JSON.parse(je)}],Re=class extends X.Scene{constructor(){super(`BootScene`)}preload(){for(let e of[...Ne,...Pe,...Fe,...Ie,...Le])this.load.atlas(e.key,e.textureUrl,e.data)}create(){let{width:e,height:t}=this.scale,n=e=>{let t=[];for(let n of e)for(let e of Object.keys(n.data.frames))t.push({key:n.key,frame:e});return t},r=n(Ne),i=n(Pe),a=n(Fe),o=n(Ie),s=n(Le);if(r.length!==50)throw Error(`Expected 50 Swordsman idle-down frames, received ${r.length}.`);if(i.length!==33)throw Error(`Expected 33 Swordsman idle-up frames, received ${i.length}.`);if(a.length!==22)throw Error(`Expected 22 Swordsman idle-left frames, received ${a.length}.`);if(o.length!==22)throw Error(`Expected 22 Swordsman idle-right frames, received ${o.length}.`);if(s.length!==89)throw Error(`Expected 89 Swordsman walk-down frames, received ${s.length}.`);let c=o[0];if(!c)throw Error(`Swordsman idle-right animation has no frames.`);this.anims.create({key:`swordsman-idle-down`,frames:r,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-up`,frames:i,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-left`,frames:a,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-right`,frames:o,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-walk-down`,frames:s,frameRate:25,repeat:-1}),this.add.text(e/2,24,`RAN: REBIRTH`,{fontFamily:`Arial`,fontSize:`28px`,color:`#ffffff`,fontStyle:`bold`}).setOrigin(.5,0);let l=this.add.text(e/2,62,`W / A / D: Change facing | Hold S: Walk Down | Current: Right`,{fontFamily:`Arial`,fontSize:`14px`,color:`#9ca3af`}).setOrigin(.5,0),u=this.add.sprite(e/2,t/2,c.key,c.frame);u.setScale(.2),u.play(`swordsman-idle-right`);let d=this.input.keyboard;if(!d)throw Error(`Keyboard input is unavailable.`);d.addKey(X.Input.Keyboard.KeyCodes.W,!0),d.addKey(X.Input.Keyboard.KeyCodes.A,!0),d.addKey(X.Input.Keyboard.KeyCodes.S,!0),d.addKey(X.Input.Keyboard.KeyCodes.D,!0);let f=e=>{u.play(`swordsman-idle-${e}`),l.setText(`W / A / S / D: Change facing direction | Current: ${e.toUpperCase()} | ${{up:33,left:22,down:50,right:22}[e]} frames`)};d.on(`keydown-W`,()=>f(`up`)),d.on(`keydown-A`,()=>f(`left`)),d.on(`keydown-D`,()=>f(`right`)),d.on(`keydown-S`,()=>{u.play(`swordsman-walk-down`),l.setText(`W / A / D: Change facing | Hold S: Walk Down | Current: WALK DOWN | 89 frames | 25 FPS`)}),d.on(`keyup-S`,()=>{f(`down`)})}},ze={type:X.AUTO,parent:`game`,backgroundColor:`#111827`,scale:{mode:X.Scale.RESIZE,autoCenter:X.Scale.CENTER_BOTH,width:1280,height:720},scene:[Re]};new X.Game(ze);
+//# sourceMappingURL=index-xdL2IgUj.js.map
