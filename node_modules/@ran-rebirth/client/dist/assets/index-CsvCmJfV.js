@@ -3994,5 +3994,1053 @@ texCoord = mod(texCoord, 1.0) * outFrame.zw + outFrame.xy;`},disable:!!e}}},8378
   ]\r
  }\r
 }\r
-`,fe=`/assets/Idle_up3-Ctu1lifj.png`,pe=[{key:`swordsman-idle-down-01`,textureUrl:Z,data:JSON.parse(ne)},{key:`swordsman-idle-down-02`,textureUrl:$,data:JSON.parse(Q)},{key:`swordsman-idle-down-03`,textureUrl:ie,data:JSON.parse(re)},{key:`swordsman-idle-down-04`,textureUrl:oe,data:JSON.parse(ae)}],me=[{key:`swordsman-idle-up-01`,textureUrl:ce,data:JSON.parse(se)},{key:`swordsman-idle-up-02`,textureUrl:ue,data:JSON.parse(le)},{key:`swordsman-idle-up-03`,textureUrl:fe,data:JSON.parse(de)}],he=class extends X.Scene{constructor(){super(`BootScene`)}preload(){for(let e of[...pe,...me])this.load.atlas(e.key,e.textureUrl,e.data)}create(){let{width:e,height:t}=this.scale,n=e=>{let t=[];for(let n of e)for(let e of Object.keys(n.data.frames))t.push({key:n.key,frame:e});return t},r=n(pe),i=n(me);if(r.length!==50)throw Error(`Expected 50 Swordsman idle-down frames, received ${r.length}.`);if(i.length!==33)throw Error(`Expected 33 Swordsman idle-up frames, received ${i.length}.`);let a=i[0];if(!a)throw Error(`Swordsman idle-up animation has no frames.`);this.anims.create({key:`swordsman-idle-down`,frames:r,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-up`,frames:i,frameRate:10,repeat:-1}),this.add.text(e/2,24,`RAN: REBIRTH`,{fontFamily:`Arial`,fontSize:`28px`,color:`#ffffff`,fontStyle:`bold`}).setOrigin(.5,0),this.add.text(e/2,62,`Swordsman | Idle Up | 33 frames | 10 FPS`,{fontFamily:`Arial`,fontSize:`14px`,color:`#9ca3af`}).setOrigin(.5,0);let o=this.add.sprite(e/2,t/2,a.key,a.frame);o.setScale(.2),o.play(`swordsman-idle-up`)}},ge={type:X.AUTO,parent:`game`,backgroundColor:`#111827`,scale:{mode:X.Scale.RESIZE,autoCenter:X.Scale.CENTER_BOTH,width:1280,height:720},scene:[he]};new X.Game(ge);
-//# sourceMappingURL=index-mrF3xY1k.js.map
+`,fe=`/assets/Idle_up3-Ctu1lifj.png`,pe=`{\r
+  "frames": {\r
+    "0218 #Idle_left1 0.png": {\r
+      "frame": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 1.png": {\r
+      "frame": {\r
+        "x": 960,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 2.png": {\r
+      "frame": {\r
+        "x": 1920,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 3.png": {\r
+      "frame": {\r
+        "x": 2880,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 4.png": {\r
+      "frame": {\r
+        "x": 3840,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 5.png": {\r
+      "frame": {\r
+        "x": 4800,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 6.png": {\r
+      "frame": {\r
+        "x": 5760,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 7.png": {\r
+      "frame": {\r
+        "x": 6720,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 8.png": {\r
+      "frame": {\r
+        "x": 7680,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 9.png": {\r
+      "frame": {\r
+        "x": 8640,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left1 10.png": {\r
+      "frame": {\r
+        "x": 9600,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    }\r
+  },\r
+  "meta": {\r
+    "app": "https://www.aseprite.org/",\r
+    "version": "1.3.16.1-x64",\r
+    "image": "idle_left1.png",\r
+    "format": "RGBA8888",\r
+    "size": {\r
+      "w": 10560,\r
+      "h": 1080\r
+    },\r
+    "scale": "1",\r
+    "frameTags": [\r
+      {\r
+        "name": "Idle_left1",\r
+        "from": 0,\r
+        "to": 10,\r
+        "direction": "forward",\r
+        "color": "#000000ff"\r
+      }\r
+    ],\r
+    "layers": [\r
+      {\r
+        "name": "Layer",\r
+        "opacity": 255,\r
+        "blendMode": "normal"\r
+      }\r
+    ],\r
+    "slices": []\r
+  }\r
+}`,me=`/assets/idle_left1-BdMyciil.png`,he=`{\r
+  "frames": {\r
+    "0218 #Idle_left2 0.png": {\r
+      "frame": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 1.png": {\r
+      "frame": {\r
+        "x": 960,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 2.png": {\r
+      "frame": {\r
+        "x": 1920,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 3.png": {\r
+      "frame": {\r
+        "x": 2880,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 4.png": {\r
+      "frame": {\r
+        "x": 3840,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 5.png": {\r
+      "frame": {\r
+        "x": 4800,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 6.png": {\r
+      "frame": {\r
+        "x": 5760,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 7.png": {\r
+      "frame": {\r
+        "x": 6720,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 8.png": {\r
+      "frame": {\r
+        "x": 7680,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 9.png": {\r
+      "frame": {\r
+        "x": 8640,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "0218 #Idle_left2 10.png": {\r
+      "frame": {\r
+        "x": 9600,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    }\r
+  },\r
+  "meta": {\r
+    "app": "https://www.aseprite.org/",\r
+    "version": "1.3.16.1-x64",\r
+    "image": "idle_left2.png",\r
+    "format": "RGBA8888",\r
+    "size": {\r
+      "w": 10560,\r
+      "h": 1080\r
+    },\r
+    "scale": "1",\r
+    "frameTags": [\r
+      {\r
+        "name": "Idle_left2",\r
+        "from": 0,\r
+        "to": 10,\r
+        "direction": "forward",\r
+        "color": "#000000ff"\r
+      }\r
+    ],\r
+    "layers": [\r
+      {\r
+        "name": "Layer",\r
+        "opacity": 255,\r
+        "blendMode": "normal"\r
+      }\r
+    ],\r
+    "slices": []\r
+  }\r
+}`,ge=`/assets/idle_left2-DRgkcuV0.png`,_e=`{\r
+  "frames": {\r
+    "swordsman_idle_right #Idle_right1 0.ase": {\r
+      "frame": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 1.ase": {\r
+      "frame": {\r
+        "x": 960,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 2.ase": {\r
+      "frame": {\r
+        "x": 1920,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 3.ase": {\r
+      "frame": {\r
+        "x": 2880,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 4.ase": {\r
+      "frame": {\r
+        "x": 3840,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 5.ase": {\r
+      "frame": {\r
+        "x": 4800,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 6.ase": {\r
+      "frame": {\r
+        "x": 5760,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 7.ase": {\r
+      "frame": {\r
+        "x": 6720,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 8.ase": {\r
+      "frame": {\r
+        "x": 7680,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 9.ase": {\r
+      "frame": {\r
+        "x": 8640,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right1 10.ase": {\r
+      "frame": {\r
+        "x": 9600,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    }\r
+  },\r
+  "meta": {\r
+    "app": "https://www.aseprite.org/",\r
+    "version": "1.3.16.1-x64",\r
+    "format": "RGBA8888",\r
+    "size": {\r
+      "w": 10560,\r
+      "h": 1080\r
+    },\r
+    "scale": "1",\r
+    "frameTags": [\r
+      {\r
+        "name": "Idle_right1",\r
+        "from": 0,\r
+        "to": 10,\r
+        "direction": "forward",\r
+        "color": "#000000ff"\r
+      }\r
+    ],\r
+    "layers": [\r
+      {\r
+        "name": "Layer",\r
+        "opacity": 255,\r
+        "blendMode": "normal"\r
+      }\r
+    ],\r
+    "slices": [],\r
+    "image": "idle_right1.png"\r
+  }\r
+}`,ve=`/assets/idle_right1-dfw4cekh.png`,ye=`{\r
+  "frames": {\r
+    "swordsman_idle_right #Idle_right2 0.ase": {\r
+      "frame": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 1.ase": {\r
+      "frame": {\r
+        "x": 960,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 2.ase": {\r
+      "frame": {\r
+        "x": 1920,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 3.ase": {\r
+      "frame": {\r
+        "x": 2880,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 4.ase": {\r
+      "frame": {\r
+        "x": 3840,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 5.ase": {\r
+      "frame": {\r
+        "x": 4800,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 6.ase": {\r
+      "frame": {\r
+        "x": 5760,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 7.ase": {\r
+      "frame": {\r
+        "x": 6720,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 8.ase": {\r
+      "frame": {\r
+        "x": 7680,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 9.ase": {\r
+      "frame": {\r
+        "x": 8640,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    },\r
+    "swordsman_idle_right #Idle_right2 10.ase": {\r
+      "frame": {\r
+        "x": 9600,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "rotated": false,\r
+      "trimmed": false,\r
+      "spriteSourceSize": {\r
+        "x": 0,\r
+        "y": 0,\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "sourceSize": {\r
+        "w": 960,\r
+        "h": 1080\r
+      },\r
+      "duration": 100\r
+    }\r
+  },\r
+  "meta": {\r
+    "app": "https://www.aseprite.org/",\r
+    "version": "1.3.16.1-x64",\r
+    "format": "RGBA8888",\r
+    "size": {\r
+      "w": 10560,\r
+      "h": 1080\r
+    },\r
+    "scale": "1",\r
+    "frameTags": [\r
+      {\r
+        "name": "Idle_right2",\r
+        "from": 0,\r
+        "to": 10,\r
+        "direction": "forward",\r
+        "color": "#000000ff"\r
+      }\r
+    ],\r
+    "layers": [\r
+      {\r
+        "name": "Layer",\r
+        "opacity": 255,\r
+        "blendMode": "normal"\r
+      }\r
+    ],\r
+    "slices": [],\r
+    "image": "idle_right2.png"\r
+  }\r
+}`,be=`/assets/idle_right2-ClwhfhcD.png`,xe=[{key:`swordsman-idle-down-01`,textureUrl:Z,data:JSON.parse(ne)},{key:`swordsman-idle-down-02`,textureUrl:$,data:JSON.parse(Q)},{key:`swordsman-idle-down-03`,textureUrl:ie,data:JSON.parse(re)},{key:`swordsman-idle-down-04`,textureUrl:oe,data:JSON.parse(ae)}],Se=[{key:`swordsman-idle-up-01`,textureUrl:ce,data:JSON.parse(se)},{key:`swordsman-idle-up-02`,textureUrl:ue,data:JSON.parse(le)},{key:`swordsman-idle-up-03`,textureUrl:fe,data:JSON.parse(de)}],Ce=[{key:`swordsman-idle-left-01`,textureUrl:me,data:JSON.parse(pe)},{key:`swordsman-idle-left-02`,textureUrl:ge,data:JSON.parse(he)}],we=[{key:`swordsman-idle-right-01`,textureUrl:ve,data:JSON.parse(_e)},{key:`swordsman-idle-right-02`,textureUrl:be,data:JSON.parse(ye)}],Te=class extends X.Scene{constructor(){super(`BootScene`)}preload(){for(let e of[...xe,...Se,...Ce,...we])this.load.atlas(e.key,e.textureUrl,e.data)}create(){let{width:e,height:t}=this.scale,n=e=>{let t=[];for(let n of e)for(let e of Object.keys(n.data.frames))t.push({key:n.key,frame:e});return t},r=n(xe),i=n(Se),a=n(Ce),o=n(we);if(r.length!==50)throw Error(`Expected 50 Swordsman idle-down frames, received ${r.length}.`);if(i.length!==33)throw Error(`Expected 33 Swordsman idle-up frames, received ${i.length}.`);if(a.length!==22)throw Error(`Expected 22 Swordsman idle-left frames, received ${a.length}.`);if(o.length!==22)throw Error(`Expected 22 Swordsman idle-right frames, received ${o.length}.`);let s=o[0];if(!s)throw Error(`Swordsman idle-right animation has no frames.`);this.anims.create({key:`swordsman-idle-down`,frames:r,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-up`,frames:i,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-left`,frames:a,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-right`,frames:o,frameRate:10,repeat:-1}),this.add.text(e/2,24,`RAN: REBIRTH`,{fontFamily:`Arial`,fontSize:`28px`,color:`#ffffff`,fontStyle:`bold`}).setOrigin(.5,0);let c=this.add.text(e/2,62,`W / A / S / D: Change facing direction | Current: Right`,{fontFamily:`Arial`,fontSize:`14px`,color:`#9ca3af`}).setOrigin(.5,0),l=this.add.sprite(e/2,t/2,s.key,s.frame);l.setScale(.2),l.play(`swordsman-idle-right`);let u=this.input.keyboard;if(!u)throw Error(`Keyboard input is unavailable.`);u.addKey(X.Input.Keyboard.KeyCodes.W,!0),u.addKey(X.Input.Keyboard.KeyCodes.A,!0),u.addKey(X.Input.Keyboard.KeyCodes.S,!0),u.addKey(X.Input.Keyboard.KeyCodes.D,!0);let d=e=>{l.play(`swordsman-idle-${e}`),c.setText(`W / A / S / D: Change facing direction | Current: ${e.toUpperCase()} | ${{up:33,left:22,down:50,right:22}[e]} frames`)};u.on(`keydown-W`,()=>d(`up`)),u.on(`keydown-A`,()=>d(`left`)),u.on(`keydown-S`,()=>d(`down`)),u.on(`keydown-D`,()=>d(`right`))}},Ee={type:X.AUTO,parent:`game`,backgroundColor:`#111827`,scale:{mode:X.Scale.RESIZE,autoCenter:X.Scale.CENTER_BOTH,width:1280,height:720},scene:[Te]};new X.Game(Ee);
+//# sourceMappingURL=index-CsvCmJfV.js.map
