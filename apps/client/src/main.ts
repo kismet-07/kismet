@@ -108,7 +108,7 @@ class BootScene extends Phaser.Scene {
       firstFrame.frame,
     );
 
-    swordsman.setScale(0.3);
+    swordsman.setScale(0.25);
     swordsman.play("swordsman-idle-down");
   }
 }
