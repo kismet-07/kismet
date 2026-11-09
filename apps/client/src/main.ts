@@ -174,7 +174,7 @@ class BootScene extends Phaser.Scene {
     const firstFrame = idleRightFrames[0];
 
     if (!firstFrame) {
-      throw new Error("Swordsman idle-up animation has no frames.");
+      throw new Error("Swordsman idle-right animation has no frames.");
     }
 
     this.anims.create({
@@ -214,8 +214,8 @@ class BootScene extends Phaser.Scene {
       })
       .setOrigin(0.5, 0);
 
-    this.add
-      .text(width / 2, 62, "Swordsman | Idle Right | 22 frames | 10 FPS", {
+    const instructionText = this.add
+      .text(width / 2, 62, "W / A / S / D: Change facing direction | Current: Right", {
         fontFamily: "Arial",
         fontSize: "14px",
         color: "#9ca3af",
@@ -231,6 +231,40 @@ class BootScene extends Phaser.Scene {
 
     swordsman.setScale(0.2);
     swordsman.play("swordsman-idle-right");
+
+    const keyboard = this.input.keyboard;
+
+    if (!keyboard) {
+      throw new Error("Keyboard input is unavailable.");
+    }
+
+    // Capture WASD so the browser does not scroll while testing controls.
+    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W, true);
+    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A, true);
+    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S, true);
+    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D, true);
+
+    const playIdleDirection = (
+      direction: "up" | "left" | "down" | "right",
+    ) => {
+      swordsman.play(`swordsman-idle-${direction}`);
+
+      const frameCounts = {
+        up: 33,
+        left: 22,
+        down: 50,
+        right: 22,
+      };
+
+      instructionText.setText(
+        `W / A / S / D: Change facing direction | Current: ${direction.toUpperCase()} | ${frameCounts[direction]} frames`,
+      );
+    };
+
+    keyboard.on("keydown-W", () => playIdleDirection("up"));
+    keyboard.on("keydown-A", () => playIdleDirection("left"));
+    keyboard.on("keydown-S", () => playIdleDirection("down"));
+    keyboard.on("keydown-D", () => playIdleDirection("right"));
   }
 }
 
