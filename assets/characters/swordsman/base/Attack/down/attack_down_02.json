@@ -1,5 +1,5 @@
 { "frames": {
-   "0083 #attack_down_02 0.png": {
+   "swordsman_attack_down. #attack_down_02 0.ase": {
     "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -7,7 +7,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 1.png": {
+   "swordsman_attack_down. #attack_down_02 1.ase": {
     "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -15,7 +15,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 2.png": {
+   "swordsman_attack_down. #attack_down_02 2.ase": {
     "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -23,7 +23,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 3.png": {
+   "swordsman_attack_down. #attack_down_02 3.ase": {
     "frame": { "x": 5400, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -31,7 +31,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 4.png": {
+   "swordsman_attack_down. #attack_down_02 4.ase": {
     "frame": { "x": 7200, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -39,7 +39,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 5.png": {
+   "swordsman_attack_down. #attack_down_02 5.ase": {
     "frame": { "x": 9000, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -47,7 +47,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 6.png": {
+   "swordsman_attack_down. #attack_down_02 6.ase": {
     "frame": { "x": 10800, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -55,7 +55,7 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 7.png": {
+   "swordsman_attack_down. #attack_down_02 7.ase": {
     "frame": { "x": 12600, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
@@ -63,48 +63,8 @@
     "sourceSize": { "w": 1800, "h": 1080 },
     "duration": 40
    },
-   "0083 #attack_down_02 8.png": {
+   "swordsman_attack_down. #attack_down_02 8.ase": {
     "frame": { "x": 14400, "y": 0, "w": 1800, "h": 1080 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
-    "sourceSize": { "w": 1800, "h": 1080 },
-    "duration": 40
-   },
-   "0083 #attack_down_02 9.png": {
-    "frame": { "x": 16200, "y": 0, "w": 1800, "h": 1080 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
-    "sourceSize": { "w": 1800, "h": 1080 },
-    "duration": 40
-   },
-   "0083 #attack_down_02 10.png": {
-    "frame": { "x": 18000, "y": 0, "w": 1800, "h": 1080 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
-    "sourceSize": { "w": 1800, "h": 1080 },
-    "duration": 40
-   },
-   "0083 #attack_down_02 11.png": {
-    "frame": { "x": 19800, "y": 0, "w": 1800, "h": 1080 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
-    "sourceSize": { "w": 1800, "h": 1080 },
-    "duration": 40
-   },
-   "0083 #attack_down_02 12.png": {
-    "frame": { "x": 21600, "y": 0, "w": 1800, "h": 1080 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
-    "sourceSize": { "w": 1800, "h": 1080 },
-    "duration": 40
-   },
-   "0083 #attack_down_02 13.png": {
-    "frame": { "x": 23400, "y": 0, "w": 1800, "h": 1080 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
@@ -117,12 +77,14 @@
   "version": "1.3.16.1-x64",
   "image": "attack_down_02.png",
   "format": "RGBA8888",
-  "size": { "w": 25200, "h": 1080 },
+  "size": { "w": 16200, "h": 1080 },
   "scale": "1",
   "frameTags": [
-   { "name": "attack_down_01", "from": 0, "to": 9, "direction": "forward", "color": "#000000ff" },
-   { "name": "attack_down_02", "from": 10, "to": 23, "direction": "forward", "color": "#000000ff" },
-   { "name": "attack_down_03", "from": 24, "to": 38, "direction": "forward", "color": "#000000ff" }
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
    { "name": "Layer", "opacity": 255, "blendMode": "normal" }

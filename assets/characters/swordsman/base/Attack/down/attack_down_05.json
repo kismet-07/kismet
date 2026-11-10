@@ -1,0 +1,47 @@
+{ "frames": {
+   "swordsman_attack_down. #attack_down_05 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
+    "sourceSize": { "w": 1800, "h": 1080 },
+    "duration": 40
+   },
+   "swordsman_attack_down. #attack_down_05 1.ase": {
+    "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
+    "sourceSize": { "w": 1800, "h": 1080 },
+    "duration": 40
+   },
+   "swordsman_attack_down. #attack_down_05 2.ase": {
+    "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },
+    "sourceSize": { "w": 1800, "h": 1080 },
+    "duration": 40
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.16.1-x64",
+  "image": "attack_down_05.png",
+  "format": "RGBA8888",
+  "size": { "w": 5400, "h": 1080 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
