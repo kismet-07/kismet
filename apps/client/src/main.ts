@@ -84,6 +84,16 @@ import attackDownAtlas4Json from "../../../assets/characters/swordsman/base/Atta
 import attackDownAtlas4Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_04.png?url";
 import attackDownAtlas5Json from "../../../assets/characters/swordsman/base/Attack/down/attack_down_05.json?raw";
 import attackDownAtlas5Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_05.png?url";
+import attackUpAtlas1Json from "../../../assets/characters/swordsman/base/Attack/up/attack_up_o1.json?raw";
+import attackUpAtlas1Texture from "../../../assets/characters/swordsman/base/Attack/up/attack_up_01.png?url";
+import attackUpAtlas2Json from "../../../assets/characters/swordsman/base/Attack/up/attack_up_o2.json?raw";
+import attackUpAtlas2Texture from "../../../assets/characters/swordsman/base/Attack/up/attack_up_02.png?url";
+import attackUpAtlas3Json from "../../../assets/characters/swordsman/base/Attack/up/attack_up_o3.json?raw";
+import attackUpAtlas3Texture from "../../../assets/characters/swordsman/base/Attack/up/attack_up_03.png?url";
+import attackUpAtlas4Json from "../../../assets/characters/swordsman/base/Attack/up/attack_up_o4.json?raw";
+import attackUpAtlas4Texture from "../../../assets/characters/swordsman/base/Attack/up/attack_up_04.png?url";
+import attackUpAtlas5Json from "../../../assets/characters/swordsman/base/Attack/up/attack_up_o5.json?raw";
+import attackUpAtlas5Texture from "../../../assets/characters/swordsman/base/Attack/up/attack_up_05.png?url";
 
 type AsepriteAtlasData = {
   frames: Record<string, unknown>;
@@ -118,6 +128,38 @@ const attackDownAtlases: {
     key: "swordsman-attack-down-05",
     textureUrl: attackDownAtlas5Texture,
     data: JSON.parse(attackDownAtlas5Json) as AsepriteAtlasData,
+  },
+];
+
+const attackUpAtlases: {
+  key: string;
+  textureUrl: string;
+  data: AsepriteAtlasData;
+}[] = [
+  {
+    key: "swordsman-attack-up-01",
+    textureUrl: attackUpAtlas1Texture,
+    data: JSON.parse(attackUpAtlas1Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-up-02",
+    textureUrl: attackUpAtlas2Texture,
+    data: JSON.parse(attackUpAtlas2Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-up-03",
+    textureUrl: attackUpAtlas3Texture,
+    data: JSON.parse(attackUpAtlas3Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-up-04",
+    textureUrl: attackUpAtlas4Texture,
+    data: JSON.parse(attackUpAtlas4Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-up-05",
+    textureUrl: attackUpAtlas5Texture,
+    data: JSON.parse(attackUpAtlas5Json) as AsepriteAtlasData,
   },
 ];
 
@@ -359,7 +401,7 @@ class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    for (const atlas of [...idleDownAtlases, ...idleUpAtlases, ...idleLeftAtlases, ...idleRightAtlases, ...walkDownAtlases, ...walkUpAtlases, ...walkLeftAtlases, ...walkRightAtlases, ...attackDownAtlases]) {
+    for (const atlas of [...idleDownAtlases, ...idleUpAtlases, ...idleLeftAtlases, ...idleRightAtlases, ...walkDownAtlases, ...walkUpAtlases, ...walkLeftAtlases, ...walkRightAtlases, ...attackDownAtlases, ...attackUpAtlases]) {
       this.load.atlas(atlas.key, atlas.textureUrl, atlas.data);
     }
   }
@@ -390,6 +432,7 @@ class BootScene extends Phaser.Scene {
     const walkLeftFrames = collectFrames(walkLeftAtlases);
     const walkRightFrames = collectFrames(walkRightAtlases);
     const attackDownFrames = collectFrames(attackDownAtlases);
+    const attackUpFrames = collectFrames(attackUpAtlases);
 
     if (idleDownFrames.length !== 50) {
       throw new Error(
@@ -442,6 +485,12 @@ class BootScene extends Phaser.Scene {
     if (attackDownFrames.length !== 39) {
       throw new Error(
         `Expected 39 Swordsman attack-down frames, received ${attackDownFrames.length}.`,
+      );
+    }
+
+    if (attackUpFrames.length !== 47) {
+      throw new Error(
+        `Expected 47 Swordsman attack-up frames, received ${attackUpFrames.length}.`,
       );
     }
 
@@ -510,6 +559,13 @@ class BootScene extends Phaser.Scene {
     this.anims.create({
       key: "swordsman-attack-down",
       frames: attackDownFrames,
+      frameRate: 25,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: "swordsman-attack-up",
+      frames: attackUpFrames,
       frameRate: 25,
       repeat: 0,
     });
