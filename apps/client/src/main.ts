@@ -631,14 +631,17 @@ class BootScene extends Phaser.Scene {
       }
     };
 
+    let activeAttackAnimation: "swordsman-attack-down" | "swordsman-attack-up" | null = null;
+
     swordsman.on(
       Phaser.Animations.Events.ANIMATION_COMPLETE,
       (animation: Phaser.Animations.Animation) => {
-        if (animation.key !== "swordsman-attack-down") {
+        if (!isAttacking || animation.key !== activeAttackAnimation) {
           return;
         }
 
         isAttacking = false;
+        activeAttackAnimation = null;
         resumeMovementAnimation();
       },
     );
@@ -648,10 +651,25 @@ class BootScene extends Phaser.Scene {
         return;
       }
 
+      // Only the Up and Down attack directions are available at this stage.
+      // Do not play a visually incorrect attack when facing left or right.
+      if (facingDirection !== "up" && facingDirection !== "down") {
+        instructionText.setText("Basic attacks are currently available only when facing UP or DOWN.");
+        return;
+      }
+
       isAttacking = true;
-      facingDirection = "down";
-      swordsman.play("swordsman-attack-down");
-      instructionText.setText("LEFT CLICK: Basic Attack Down | 39 frames | 25 FPS");
+      activeAttackAnimation =
+        facingDirection === "up"
+          ? "swordsman-attack-up"
+          : "swordsman-attack-down";
+
+      swordsman.play(activeAttackAnimation);
+      instructionText.setText(
+        facingDirection === "up"
+          ? "LEFT CLICK: Basic Attack Up | 47 frames | 25 FPS"
+          : "LEFT CLICK: Basic Attack Down | 39 frames | 25 FPS",
+      );
     });
 
     const playIdleDirection = (
