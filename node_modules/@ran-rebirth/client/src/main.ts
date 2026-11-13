@@ -74,10 +74,52 @@ import walkRightAtlas5Json from "../../../assets/characters/swordsman/base/walk/
 import walkRightAtlas5Texture from "../../../assets/characters/swordsman/base/walk/right/walk_right_05.png?url";
 import walkRightAtlas6Json from "../../../assets/characters/swordsman/base/walk/right/walk_right_06.json?raw";
 import walkRightAtlas6Texture from "../../../assets/characters/swordsman/base/walk/right/walk_right_06.png?url";
+import attackDownAtlas1Json from "../../../assets/characters/swordsman/base/Attack/down/attack_down_01.json?raw";
+import attackDownAtlas1Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_01.png?url";
+import attackDownAtlas2Json from "../../../assets/characters/swordsman/base/Attack/down/attack_down_02.json?raw";
+import attackDownAtlas2Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_02.png?url";
+import attackDownAtlas3Json from "../../../assets/characters/swordsman/base/Attack/down/attack_down_03.json?raw";
+import attackDownAtlas3Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_03.png?url";
+import attackDownAtlas4Json from "../../../assets/characters/swordsman/base/Attack/down/attack_down_04.json?raw";
+import attackDownAtlas4Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_04.png?url";
+import attackDownAtlas5Json from "../../../assets/characters/swordsman/base/Attack/down/attack_down_05.json?raw";
+import attackDownAtlas5Texture from "../../../assets/characters/swordsman/base/Attack/down/attack_down_05.png?url";
 
 type AsepriteAtlasData = {
   frames: Record<string, unknown>;
 };
+
+const attackDownAtlases: {
+  key: string;
+  textureUrl: string;
+  data: AsepriteAtlasData;
+}[] = [
+  {
+    key: "swordsman-attack-down-01",
+    textureUrl: attackDownAtlas1Texture,
+    data: JSON.parse(attackDownAtlas1Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-down-02",
+    textureUrl: attackDownAtlas2Texture,
+    data: JSON.parse(attackDownAtlas2Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-down-03",
+    textureUrl: attackDownAtlas3Texture,
+    data: JSON.parse(attackDownAtlas3Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-down-04",
+    textureUrl: attackDownAtlas4Texture,
+    data: JSON.parse(attackDownAtlas4Json) as AsepriteAtlasData,
+  },
+  {
+    key: "swordsman-attack-down-05",
+    textureUrl: attackDownAtlas5Texture,
+    data: JSON.parse(attackDownAtlas5Json) as AsepriteAtlasData,
+  },
+];
 
 const idleDownAtlases: {
   key: string;
@@ -317,7 +359,7 @@ class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    for (const atlas of [...idleDownAtlases, ...idleUpAtlases, ...idleLeftAtlases, ...idleRightAtlases, ...walkDownAtlases, ...walkUpAtlases, ...walkLeftAtlases, ...walkRightAtlases]) {
+    for (const atlas of [...idleDownAtlases, ...idleUpAtlases, ...idleLeftAtlases, ...idleRightAtlases, ...walkDownAtlases, ...walkUpAtlases, ...walkLeftAtlases, ...walkRightAtlases, ...attackDownAtlases]) {
       this.load.atlas(atlas.key, atlas.textureUrl, atlas.data);
     }
   }
@@ -347,6 +389,7 @@ class BootScene extends Phaser.Scene {
     const walkUpFrames = collectFrames(walkUpAtlases);
     const walkLeftFrames = collectFrames(walkLeftAtlases);
     const walkRightFrames = collectFrames(walkRightAtlases);
+    const attackDownFrames = collectFrames(attackDownAtlases);
 
     if (idleDownFrames.length !== 50) {
       throw new Error(
@@ -393,6 +436,12 @@ class BootScene extends Phaser.Scene {
     if (walkRightFrames.length !== 68) {
       throw new Error(
         `Expected 68 Swordsman walk-right frames, received ${walkRightFrames.length}.`,
+      );
+    }
+
+    if (attackDownFrames.length !== 39) {
+      throw new Error(
+        `Expected 39 Swordsman attack-down frames, received ${attackDownFrames.length}.`,
       );
     }
 
@@ -458,6 +507,13 @@ class BootScene extends Phaser.Scene {
       repeat: -1,
     });
 
+    this.anims.create({
+      key: "swordsman-attack-down",
+      frames: attackDownFrames,
+      frameRate: 25,
+      repeat: 0,
+    });
+
     this.add
       .text(width / 2, 24, "RAN: REBIRTH", {
         fontFamily: "Arial",
@@ -492,10 +548,55 @@ class BootScene extends Phaser.Scene {
     }
 
     // Capture WASD so the browser does not scroll while testing controls.
-    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W, true);
-    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A, true);
-    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S, true);
-    keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D, true);
+    const wKey = keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W, true);
+    const aKey = keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A, true);
+    const sKey = keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S, true);
+    const dKey = keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D, true);
+
+    let isAttacking = false;
+    let facingDirection: "up" | "left" | "down" | "right" = "right";
+
+    const resumeMovementAnimation = () => {
+      // Vertical direction takes priority for diagonal input.
+      if (wKey.isDown) {
+        facingDirection = "up";
+        swordsman.play("swordsman-walk-up");
+      } else if (sKey.isDown) {
+        facingDirection = "down";
+        swordsman.play("swordsman-walk-down");
+      } else if (aKey.isDown) {
+        facingDirection = "left";
+        swordsman.play("swordsman-walk-left");
+      } else if (dKey.isDown) {
+        facingDirection = "right";
+        swordsman.play("swordsman-walk-right");
+      } else {
+        swordsman.play(`swordsman-idle-${facingDirection}`);
+      }
+    };
+
+    swordsman.on(
+      Phaser.Animations.Events.ANIMATION_COMPLETE,
+      (animation: Phaser.Animations.Animation) => {
+        if (animation.key !== "swordsman-attack-down") {
+          return;
+        }
+
+        isAttacking = false;
+        resumeMovementAnimation();
+      },
+    );
+
+    this.input.on("pointerdown", (pointer: Phaser.Input.Pointer) => {
+      if (pointer.button !== 0 || isAttacking) {
+        return;
+      }
+
+      isAttacking = true;
+      facingDirection = "down";
+      swordsman.play("swordsman-attack-down");
+      instructionText.setText("LEFT CLICK: Basic Attack Down | 39 frames | 25 FPS");
+    });
 
     const playIdleDirection = (
       direction: "up" | "left" | "down" | "right",
@@ -515,36 +616,52 @@ class BootScene extends Phaser.Scene {
     };
 
     keyboard.on("keydown-W", () => {
+      if (isAttacking) return;
+      facingDirection = "up";
       swordsman.play("swordsman-walk-up");
       instructionText.setText("Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK UP | 78 frames | 25 FPS");
     });
 
     keyboard.on("keyup-W", () => {
+      if (isAttacking) return;
+      facingDirection = "up";
       playIdleDirection("up");
     });
     keyboard.on("keydown-A", () => {
+      if (isAttacking) return;
+      facingDirection = "left";
       swordsman.play("swordsman-walk-left");
       instructionText.setText("Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK LEFT | 68 frames | 25 FPS");
     });
 
     keyboard.on("keyup-A", () => {
+      if (isAttacking) return;
+      facingDirection = "left";
       playIdleDirection("left");
     });
     keyboard.on("keydown-D", () => {
+      if (isAttacking) return;
+      facingDirection = "right";
       swordsman.play("swordsman-walk-right");
       instructionText.setText("Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK RIGHT | 68 frames | 25 FPS");
     });
 
     keyboard.on("keyup-D", () => {
+      if (isAttacking) return;
+      facingDirection = "right";
       playIdleDirection("right");
     });
 
     keyboard.on("keydown-S", () => {
+      if (isAttacking) return;
+      facingDirection = "down";
       swordsman.play("swordsman-walk-down");
       instructionText.setText("Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK DOWN | 89 frames | 25 FPS");
     });
 
     keyboard.on("keyup-S", () => {
+      if (isAttacking) return;
+      facingDirection = "down";
       playIdleDirection("down");
     });
   }

@@ -8042,5 +8042,432 @@ texCoord = mod(texCoord, 1.0) * outFrame.zw + outFrame.xy;`},disable:!!e}}},8378
   ]\r
  }\r
 }\r
-`,mt=`/assets/walk_right_06-VFwZnKcu.png`,ht=[{key:`swordsman-idle-down-01`,textureUrl:Z,data:JSON.parse(ne)},{key:`swordsman-idle-down-02`,textureUrl:$,data:JSON.parse(Q)},{key:`swordsman-idle-down-03`,textureUrl:ie,data:JSON.parse(re)},{key:`swordsman-idle-down-04`,textureUrl:oe,data:JSON.parse(ae)}],gt=[{key:`swordsman-idle-up-01`,textureUrl:ce,data:JSON.parse(se)},{key:`swordsman-idle-up-02`,textureUrl:ue,data:JSON.parse(le)},{key:`swordsman-idle-up-03`,textureUrl:fe,data:JSON.parse(de)}],_t=[{key:`swordsman-idle-left-01`,textureUrl:me,data:JSON.parse(pe)},{key:`swordsman-idle-left-02`,textureUrl:ge,data:JSON.parse(he)}],vt=[{key:`swordsman-idle-right-01`,textureUrl:ve,data:JSON.parse(_e)},{key:`swordsman-idle-right-02`,textureUrl:be,data:JSON.parse(ye)}],yt=[{key:`swordsman-walk-down-01`,textureUrl:Se,data:JSON.parse(xe)},{key:`swordsman-walk-down-02`,textureUrl:we,data:JSON.parse(Ce)},{key:`swordsman-walk-down-03`,textureUrl:Ee,data:JSON.parse(Te)},{key:`swordsman-walk-down-04`,textureUrl:Oe,data:JSON.parse(De)},{key:`swordsman-walk-down-05`,textureUrl:Ae,data:JSON.parse(ke)},{key:`swordsman-walk-down-06`,textureUrl:Me,data:JSON.parse(je)}],bt=[{key:`swordsman-walk-up-01`,textureUrl:Pe,data:JSON.parse(Ne)},{key:`swordsman-walk-up-02`,textureUrl:Ie,data:JSON.parse(Fe)},{key:`swordsman-walk-up-03`,textureUrl:Re,data:JSON.parse(Le)},{key:`swordsman-walk-up-04`,textureUrl:Be,data:JSON.parse(ze)},{key:`swordsman-walk-up-05`,textureUrl:He,data:JSON.parse(Ve)},{key:`swordsman-walk-up-06`,textureUrl:We,data:JSON.parse(Ue)}],xt=[{key:`swordsman-walk-left-01`,textureUrl:Ke,data:JSON.parse(Ge)},{key:`swordsman-walk-left-02`,textureUrl:Je,data:JSON.parse(qe)},{key:`swordsman-walk-left-03`,textureUrl:Xe,data:JSON.parse(Ye)},{key:`swordsman-walk-left-04`,textureUrl:Qe,data:JSON.parse(Ze)},{key:`swordsman-walk-left-05`,textureUrl:et,data:JSON.parse($e)},{key:`swordsman-walk-left-06`,textureUrl:nt,data:JSON.parse(tt)}],St=[{key:`swordsman-walk-right-01`,textureUrl:it,data:JSON.parse(rt)},{key:`swordsman-walk-right-02`,textureUrl:ot,data:JSON.parse(at)},{key:`swordsman-walk-right-03`,textureUrl:ct,data:JSON.parse(st)},{key:`swordsman-walk-right-04`,textureUrl:ut,data:JSON.parse(lt)},{key:`swordsman-walk-right-05`,textureUrl:ft,data:JSON.parse(dt)},{key:`swordsman-walk-right-06`,textureUrl:mt,data:JSON.parse(pt)}],Ct=class extends X.Scene{constructor(){super(`BootScene`)}preload(){for(let e of[...ht,...gt,..._t,...vt,...yt,...bt,...xt,...St])this.load.atlas(e.key,e.textureUrl,e.data)}create(){let{width:e,height:t}=this.scale,n=e=>{let t=[];for(let n of e)for(let e of Object.keys(n.data.frames))t.push({key:n.key,frame:e});return t},r=n(ht),i=n(gt),a=n(_t),o=n(vt),s=n(yt),c=n(bt),l=n(xt),u=n(St);if(r.length!==50)throw Error(`Expected 50 Swordsman idle-down frames, received ${r.length}.`);if(i.length!==33)throw Error(`Expected 33 Swordsman idle-up frames, received ${i.length}.`);if(a.length!==22)throw Error(`Expected 22 Swordsman idle-left frames, received ${a.length}.`);if(o.length!==22)throw Error(`Expected 22 Swordsman idle-right frames, received ${o.length}.`);if(s.length!==89)throw Error(`Expected 89 Swordsman walk-down frames, received ${s.length}.`);if(c.length!==78)throw Error(`Expected 78 Swordsman walk-up frames, received ${c.length}.`);if(l.length!==68)throw Error(`Expected 68 Swordsman walk-left frames, received ${l.length}.`);if(u.length!==68)throw Error(`Expected 68 Swordsman walk-right frames, received ${u.length}.`);let d=o[0];if(!d)throw Error(`Swordsman idle-right animation has no frames.`);this.anims.create({key:`swordsman-idle-down`,frames:r,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-up`,frames:i,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-left`,frames:a,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-right`,frames:o,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-walk-down`,frames:s,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-walk-up`,frames:c,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-walk-left`,frames:l,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-walk-right`,frames:u,frameRate:25,repeat:-1}),this.add.text(e/2,24,`RAN: REBIRTH`,{fontFamily:`Arial`,fontSize:`28px`,color:`#ffffff`,fontStyle:`bold`}).setOrigin(.5,0);let f=this.add.text(e/2,62,`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right`,{fontFamily:`Arial`,fontSize:`14px`,color:`#9ca3af`}).setOrigin(.5,0),p=this.add.sprite(e/2,t/2,d.key,d.frame);p.setScale(.2),p.play(`swordsman-idle-right`);let m=this.input.keyboard;if(!m)throw Error(`Keyboard input is unavailable.`);m.addKey(X.Input.Keyboard.KeyCodes.W,!0),m.addKey(X.Input.Keyboard.KeyCodes.A,!0),m.addKey(X.Input.Keyboard.KeyCodes.S,!0),m.addKey(X.Input.Keyboard.KeyCodes.D,!0);let h=e=>{p.play(`swordsman-idle-${e}`),f.setText(`W / A / S / D: Change facing direction | Current: ${e.toUpperCase()} | ${{up:33,left:22,down:50,right:22}[e]} frames`)};m.on(`keydown-W`,()=>{p.play(`swordsman-walk-up`),f.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK UP | 78 frames | 25 FPS`)}),m.on(`keyup-W`,()=>{h(`up`)}),m.on(`keydown-A`,()=>{p.play(`swordsman-walk-left`),f.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK LEFT | 68 frames | 25 FPS`)}),m.on(`keyup-A`,()=>{h(`left`)}),m.on(`keydown-D`,()=>{p.play(`swordsman-walk-right`),f.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK RIGHT | 68 frames | 25 FPS`)}),m.on(`keyup-D`,()=>{h(`right`)}),m.on(`keydown-S`,()=>{p.play(`swordsman-walk-down`),f.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK DOWN | 89 frames | 25 FPS`)}),m.on(`keyup-S`,()=>{h(`down`)})}},wt={type:X.AUTO,parent:`game`,backgroundColor:`#111827`,scale:{mode:X.Scale.RESIZE,autoCenter:X.Scale.CENTER_BOTH,width:1280,height:720},scene:[Ct]};new X.Game(wt);
-//# sourceMappingURL=index-gkAzwZkj.js.map
+`,mt=`/assets/walk_right_06-VFwZnKcu.png`,ht=[{key:`swordsman-attack-down-01`,textureUrl:`/assets/attack_down_01-ByGZcUzL.png`,data:JSON.parse(`{ "frames": {\r
+   "swordsman_attack_down. #attack_down_01 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 1.ase": {\r
+    "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 2.ase": {\r
+    "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 3.ase": {\r
+    "frame": { "x": 5400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 4.ase": {\r
+    "frame": { "x": 7200, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 5.ase": {\r
+    "frame": { "x": 9000, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 6.ase": {\r
+    "frame": { "x": 10800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 7.ase": {\r
+    "frame": { "x": 12600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_01 8.ase": {\r
+    "frame": { "x": 14400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "attack_down_01.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 16200, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`)},{key:`swordsman-attack-down-02`,textureUrl:`/assets/attack_down_02-Cii7vOB-.png`,data:JSON.parse(`{ "frames": {\r
+   "swordsman_attack_down. #attack_down_02 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 1.ase": {\r
+    "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 2.ase": {\r
+    "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 3.ase": {\r
+    "frame": { "x": 5400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 4.ase": {\r
+    "frame": { "x": 7200, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 5.ase": {\r
+    "frame": { "x": 9000, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 6.ase": {\r
+    "frame": { "x": 10800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 7.ase": {\r
+    "frame": { "x": 12600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_02 8.ase": {\r
+    "frame": { "x": 14400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "attack_down_02.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 16200, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`)},{key:`swordsman-attack-down-03`,textureUrl:`/assets/attack_down_03-BFjBr4_q.png`,data:JSON.parse(`{ "frames": {\r
+   "swordsman_attack_down. #attack_down_03 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 1.ase": {\r
+    "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 2.ase": {\r
+    "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 3.ase": {\r
+    "frame": { "x": 5400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 4.ase": {\r
+    "frame": { "x": 7200, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 5.ase": {\r
+    "frame": { "x": 9000, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 6.ase": {\r
+    "frame": { "x": 10800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 7.ase": {\r
+    "frame": { "x": 12600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_03 8.ase": {\r
+    "frame": { "x": 14400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "attack_down_03.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 16200, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`)},{key:`swordsman-attack-down-04`,textureUrl:`/assets/attack_down_04-Tz1Gjogw.png`,data:JSON.parse(`{ "frames": {\r
+   "swordsman_attack_down. #attack_down_04 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 1.ase": {\r
+    "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 2.ase": {\r
+    "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 3.ase": {\r
+    "frame": { "x": 5400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 4.ase": {\r
+    "frame": { "x": 7200, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 5.ase": {\r
+    "frame": { "x": 9000, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 6.ase": {\r
+    "frame": { "x": 10800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 7.ase": {\r
+    "frame": { "x": 12600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_04 8.ase": {\r
+    "frame": { "x": 14400, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "attack_down_04.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 16200, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`)},{key:`swordsman-attack-down-05`,textureUrl:`/assets/attack_down_05-B71EeO1X.png`,data:JSON.parse(`{ "frames": {\r
+   "swordsman_attack_down. #attack_down_05 0.ase": {\r
+    "frame": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_05 1.ase": {\r
+    "frame": { "x": 1800, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   },\r
+   "swordsman_attack_down. #attack_down_05 2.ase": {\r
+    "frame": { "x": 3600, "y": 0, "w": 1800, "h": 1080 },\r
+    "rotated": false,\r
+    "trimmed": false,\r
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1800, "h": 1080 },\r
+    "sourceSize": { "w": 1800, "h": 1080 },\r
+    "duration": 40\r
+   }\r
+ },\r
+ "meta": {\r
+  "app": "https://www.aseprite.org/",\r
+  "version": "1.3.16.1-x64",\r
+  "image": "attack_down_05.png",\r
+  "format": "RGBA8888",\r
+  "size": { "w": 5400, "h": 1080 },\r
+  "scale": "1",\r
+  "frameTags": [\r
+   { "name": "attack_down_01", "from": 0, "to": 8, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_02", "from": 9, "to": 17, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_03", "from": 18, "to": 26, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_04", "from": 27, "to": 35, "direction": "forward", "color": "#000000ff" },\r
+   { "name": "attack_down_05", "from": 36, "to": 38, "direction": "forward", "color": "#000000ff" }\r
+  ],\r
+  "layers": [\r
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }\r
+  ],\r
+  "slices": [\r
+  ]\r
+ }\r
+}\r
+`)}],gt=[{key:`swordsman-idle-down-01`,textureUrl:Z,data:JSON.parse(ne)},{key:`swordsman-idle-down-02`,textureUrl:$,data:JSON.parse(Q)},{key:`swordsman-idle-down-03`,textureUrl:ie,data:JSON.parse(re)},{key:`swordsman-idle-down-04`,textureUrl:oe,data:JSON.parse(ae)}],_t=[{key:`swordsman-idle-up-01`,textureUrl:ce,data:JSON.parse(se)},{key:`swordsman-idle-up-02`,textureUrl:ue,data:JSON.parse(le)},{key:`swordsman-idle-up-03`,textureUrl:fe,data:JSON.parse(de)}],vt=[{key:`swordsman-idle-left-01`,textureUrl:me,data:JSON.parse(pe)},{key:`swordsman-idle-left-02`,textureUrl:ge,data:JSON.parse(he)}],yt=[{key:`swordsman-idle-right-01`,textureUrl:ve,data:JSON.parse(_e)},{key:`swordsman-idle-right-02`,textureUrl:be,data:JSON.parse(ye)}],bt=[{key:`swordsman-walk-down-01`,textureUrl:Se,data:JSON.parse(xe)},{key:`swordsman-walk-down-02`,textureUrl:we,data:JSON.parse(Ce)},{key:`swordsman-walk-down-03`,textureUrl:Ee,data:JSON.parse(Te)},{key:`swordsman-walk-down-04`,textureUrl:Oe,data:JSON.parse(De)},{key:`swordsman-walk-down-05`,textureUrl:Ae,data:JSON.parse(ke)},{key:`swordsman-walk-down-06`,textureUrl:Me,data:JSON.parse(je)}],xt=[{key:`swordsman-walk-up-01`,textureUrl:Pe,data:JSON.parse(Ne)},{key:`swordsman-walk-up-02`,textureUrl:Ie,data:JSON.parse(Fe)},{key:`swordsman-walk-up-03`,textureUrl:Re,data:JSON.parse(Le)},{key:`swordsman-walk-up-04`,textureUrl:Be,data:JSON.parse(ze)},{key:`swordsman-walk-up-05`,textureUrl:He,data:JSON.parse(Ve)},{key:`swordsman-walk-up-06`,textureUrl:We,data:JSON.parse(Ue)}],St=[{key:`swordsman-walk-left-01`,textureUrl:Ke,data:JSON.parse(Ge)},{key:`swordsman-walk-left-02`,textureUrl:Je,data:JSON.parse(qe)},{key:`swordsman-walk-left-03`,textureUrl:Xe,data:JSON.parse(Ye)},{key:`swordsman-walk-left-04`,textureUrl:Qe,data:JSON.parse(Ze)},{key:`swordsman-walk-left-05`,textureUrl:et,data:JSON.parse($e)},{key:`swordsman-walk-left-06`,textureUrl:nt,data:JSON.parse(tt)}],Ct=[{key:`swordsman-walk-right-01`,textureUrl:it,data:JSON.parse(rt)},{key:`swordsman-walk-right-02`,textureUrl:ot,data:JSON.parse(at)},{key:`swordsman-walk-right-03`,textureUrl:ct,data:JSON.parse(st)},{key:`swordsman-walk-right-04`,textureUrl:ut,data:JSON.parse(lt)},{key:`swordsman-walk-right-05`,textureUrl:ft,data:JSON.parse(dt)},{key:`swordsman-walk-right-06`,textureUrl:mt,data:JSON.parse(pt)}],wt=class extends X.Scene{constructor(){super(`BootScene`)}preload(){for(let e of[...gt,..._t,...vt,...yt,...bt,...xt,...St,...Ct,...ht])this.load.atlas(e.key,e.textureUrl,e.data)}create(){let{width:e,height:t}=this.scale,n=e=>{let t=[];for(let n of e)for(let e of Object.keys(n.data.frames))t.push({key:n.key,frame:e});return t},r=n(gt),i=n(_t),a=n(vt),o=n(yt),s=n(bt),c=n(xt),l=n(St),u=n(Ct),d=n(ht);if(r.length!==50)throw Error(`Expected 50 Swordsman idle-down frames, received ${r.length}.`);if(i.length!==33)throw Error(`Expected 33 Swordsman idle-up frames, received ${i.length}.`);if(a.length!==22)throw Error(`Expected 22 Swordsman idle-left frames, received ${a.length}.`);if(o.length!==22)throw Error(`Expected 22 Swordsman idle-right frames, received ${o.length}.`);if(s.length!==89)throw Error(`Expected 89 Swordsman walk-down frames, received ${s.length}.`);if(c.length!==78)throw Error(`Expected 78 Swordsman walk-up frames, received ${c.length}.`);if(l.length!==68)throw Error(`Expected 68 Swordsman walk-left frames, received ${l.length}.`);if(u.length!==68)throw Error(`Expected 68 Swordsman walk-right frames, received ${u.length}.`);if(d.length!==39)throw Error(`Expected 39 Swordsman attack-down frames, received ${d.length}.`);let f=o[0];if(!f)throw Error(`Swordsman idle-right animation has no frames.`);this.anims.create({key:`swordsman-idle-down`,frames:r,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-up`,frames:i,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-left`,frames:a,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-idle-right`,frames:o,frameRate:10,repeat:-1}),this.anims.create({key:`swordsman-walk-down`,frames:s,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-walk-up`,frames:c,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-walk-left`,frames:l,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-walk-right`,frames:u,frameRate:25,repeat:-1}),this.anims.create({key:`swordsman-attack-down`,frames:d,frameRate:25,repeat:0}),this.add.text(e/2,24,`RAN: REBIRTH`,{fontFamily:`Arial`,fontSize:`28px`,color:`#ffffff`,fontStyle:`bold`}).setOrigin(.5,0);let p=this.add.text(e/2,62,`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right`,{fontFamily:`Arial`,fontSize:`14px`,color:`#9ca3af`}).setOrigin(.5,0),m=this.add.sprite(e/2,t/2,f.key,f.frame);m.setScale(.2),m.play(`swordsman-idle-right`);let h=this.input.keyboard;if(!h)throw Error(`Keyboard input is unavailable.`);let g=h.addKey(X.Input.Keyboard.KeyCodes.W,!0),_=h.addKey(X.Input.Keyboard.KeyCodes.A,!0),v=h.addKey(X.Input.Keyboard.KeyCodes.S,!0),y=h.addKey(X.Input.Keyboard.KeyCodes.D,!0),b=!1,x=`right`,S=()=>{g.isDown?(x=`up`,m.play(`swordsman-walk-up`)):v.isDown?(x=`down`,m.play(`swordsman-walk-down`)):_.isDown?(x=`left`,m.play(`swordsman-walk-left`)):y.isDown?(x=`right`,m.play(`swordsman-walk-right`)):m.play(`swordsman-idle-${x}`)};m.on(X.Animations.Events.ANIMATION_COMPLETE,e=>{e.key===`swordsman-attack-down`&&(b=!1,S())}),this.input.on(`pointerdown`,e=>{e.button!==0||b||(b=!0,x=`down`,m.play(`swordsman-attack-down`),p.setText(`LEFT CLICK: Basic Attack Down | 39 frames | 25 FPS`))});let C=e=>{m.play(`swordsman-idle-${e}`),p.setText(`W / A / S / D: Change facing direction | Current: ${e.toUpperCase()} | ${{up:33,left:22,down:50,right:22}[e]} frames`)};h.on(`keydown-W`,()=>{b||(x=`up`,m.play(`swordsman-walk-up`),p.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK UP | 78 frames | 25 FPS`))}),h.on(`keyup-W`,()=>{b||(x=`up`,C(`up`))}),h.on(`keydown-A`,()=>{b||(x=`left`,m.play(`swordsman-walk-left`),p.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK LEFT | 68 frames | 25 FPS`))}),h.on(`keyup-A`,()=>{b||(x=`left`,C(`left`))}),h.on(`keydown-D`,()=>{b||(x=`right`,m.play(`swordsman-walk-right`),p.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK RIGHT | 68 frames | 25 FPS`))}),h.on(`keyup-D`,()=>{b||(x=`right`,C(`right`))}),h.on(`keydown-S`,()=>{b||(x=`down`,m.play(`swordsman-walk-down`),p.setText(`Hold W: Walk Up | Hold A: Walk Left | Hold S: Walk Down | Hold D: Walk Right | Current: WALK DOWN | 89 frames | 25 FPS`))}),h.on(`keyup-S`,()=>{b||(x=`down`,C(`down`))})}},Tt={type:X.AUTO,parent:`game`,backgroundColor:`#111827`,scale:{mode:X.Scale.RESIZE,autoCenter:X.Scale.CENTER_BOTH,width:1280,height:720},scene:[wt]};new X.Game(Tt);
+//# sourceMappingURL=index-A54nqZs1.js.map
